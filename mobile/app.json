@@ -1,0 +1,12 @@
+{
+  "name": "productLogger",
+  "displayName": "Product Logger",
+  "expo": {
+    "name": "Product Logger",
+    "slug": "productLogger",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
