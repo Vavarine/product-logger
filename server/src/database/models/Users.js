@@ -1,34 +1,26 @@
 import { Sequelize, DataTypes } from 'sequelize';
 import sequelizePaginate from 'sequelize-paginate';
-import DB from '../db';
-
-import User from './Users';
+import DB from '../db'
 
 const db = new DB;
 
-const Product = db.sequelize.define('Product', {
+const Users = db.sequelize.define('users', {
         id: {
-            type: Sequelize.INTEGER, 
+            type: Sequelize.INTEGER,    
             autoIncrement: true,
             primaryKey: true
         },
-        title: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        description: {
+        email: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        url: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        views: {
-            type: DataTypes.INTEGER,
-        },
-        likes: {
-            type: DataTypes.INTEGER,
         },
         createdAt: {
             type: DataTypes.DATE,
@@ -40,13 +32,7 @@ const Product = db.sequelize.define('Product', {
     }
 )
 
-Product.belongsTo(User, {
-    foreignKey: 'userId',
-    foreignKeyConstraint: true
-});
 
-sequelizePaginate.paginate(Product);
+console.log(Users === db.sequelize.models.Users);
 
-console.log(Product === db.sequelize.models.Product);
-
-export default Product;
+export default Users;

@@ -20,6 +20,19 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      views: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
+      },
+      likes: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+        references: { model: 'Users', key: 'id' },
+        allowNull: false,
+      },
       createdAt: {
         type: Sequelize.DATE,
         defaultValue: Date.now,

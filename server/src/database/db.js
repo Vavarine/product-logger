@@ -3,7 +3,7 @@ import { Sequelize } from 'sequelize';
 class DB{
     // Inicializando o BD
     constructor(){
-        this.sequelize = new Sequelize('nodeapi', 'root', 'XM8maxter', {
+        this.sequelize = new Sequelize('test', 'root', 'XM8maxter', {
             host: 'localhost',
             dialect: 'mysql',
         });

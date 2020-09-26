@@ -2,21 +2,21 @@
     "development": {
       "username": "root",
       "password": "XM8maxter",
-      "database": "nodeapi",
+      "database": "test",
       "host": "localhost",
       "dialect": "mysql"
     },
     "test": {
       "username": "root",
       "password": "XM8maxter",
-      "database": "nodeapi",
+      "database": "test",
       "host": "localhost",
       "dialect": "mysql"
     },
     "production": {
       "username": "root",
       "password": "XM8maxter",
-      "database": "nodeapi",
+      "database": "test",
       "host": "localhost",
       "dialect": "mysql"
     }
