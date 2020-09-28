@@ -4,8 +4,6 @@ import cors from 'cors';
 import DB from './database/db';
 import routes from './routes';
 
-import './database/models/Product';
-
 // Inicializando o app
 const app = express();
 app.use(express.json());

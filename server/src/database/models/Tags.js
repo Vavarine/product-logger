@@ -4,7 +4,7 @@ import DB from '../db'
 
 const db = new DB;
 
-const Users = db.sequelize.define('Users', {
+const Tags = db.sequelize.define('Tags', {
         id: {
             type: Sequelize.INTEGER,    
             autoIncrement: true,
@@ -13,15 +13,7 @@ const Users = db.sequelize.define('Users', {
         name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+        },  
         createdAt: {
             type: DataTypes.DATE,
             defaultValue: Date.now,
@@ -32,7 +24,6 @@ const Users = db.sequelize.define('Users', {
     }
 )
 
+console.log(Tags === db.sequelize.models.Tags);
 
-console.log(Users === db.sequelize.models.Users);
-
-export default Users;
+export default Tags;

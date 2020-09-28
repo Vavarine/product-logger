@@ -1,23 +1,23 @@
 import express from 'express';
-import ProductController from './controllers/ProductController';
-import UserController from './controllers/UserController';
+import ProductsController from './controllers/ProductsController';
+import UsersController from './controllers/UsersController';
 
 const routes = express.Router();
 
-const productController = new ProductController();
-const userController = new UserController();
+const productsController = new ProductsController();
+const usersController = new UsersController();
 
-routes.get('/products', productController.index);
-routes.post('/products', productController.store);
-routes.get('/products/:id', productController.show);
-routes.put('/products/:id', productController.update);
-routes.delete('/products/:id', productController.destroy);
+routes.get('/products', productsController.index);
+routes.post('/products', productsController.store);
+routes.get('/products/:id', productsController.show);
+routes.put('/products/:id', productsController.update);
+routes.delete('/products/:id', productsController.destroy);
 
-routes.get('/users', userController.index);
-routes.post('/users', userController.store);
-routes.get('/users/:id', userController.show);
-routes.put('/users/:id', userController.update);
-routes.delete('/users/:id', userController.destroy)
+routes.get('/users', usersController.index);
+routes.post('/users', usersController.store);
+routes.get('/users/:id', usersController.show);
+routes.put('/users/:id', usersController.update);
+routes.delete('/users/:id', usersController.destroy)
 
 routes.get('/', (req, res) => {
    return res.send('Minha nossa');

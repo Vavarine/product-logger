@@ -1,4 +1,4 @@
-import Product from '../database/models/Product';
+import Products from '../database/models/Products';
 
 class ProductController {
    constructor(){
@@ -9,7 +9,7 @@ class ProductController {
    async index(req, res){
       const { page = 1 } = req.query;
 
-      await Product.paginate({ page, paginate: 10 }).then(products => {
+      await Products.paginate({ page, paginate: 10 }).then(products => {
          const data = Object.assign(products, {page: parseInt(page)});
          return res.send(data);
       }); 
@@ -17,7 +17,7 @@ class ProductController {
 
    // Mostra um único produto
    async show(req, res){
-      await Product.findOne({ 
+      await Products.findOne({ 
          where: { 'id': req.params.id } 
       }).then(product => {
          if(product){
@@ -32,7 +32,7 @@ class ProductController {
 
    // Guarda produto no banco de dados
    async store(req, res){
-      await Product.create(req.body).then(()=>{
+      await Products.create(req.body).then(()=>{
          return res.status(201).send('Produto criado com sucesso');
       }).catch((error) =>{
          console.log(error);
@@ -42,7 +42,7 @@ class ProductController {
 
    // Edição de produto pelo id informado
    async update(req, res){
-      await Product.findOne({ 
+      await Products.findOne({ 
          where: { 'id': req.params.id } 
       }).then(async (product) => {
          await Product.update(req.body, {
@@ -59,7 +59,7 @@ class ProductController {
 
    // Exclui produto conforme o id informado
    async destroy(req, res){
-      await Product.findOne({ 
+      await Products.findOne({ 
          where: { 'id': req.params.id } 
       }).then(async (product) => {
          await Product.destroy({

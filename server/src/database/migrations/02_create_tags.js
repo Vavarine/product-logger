@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    const Users = queryInterface.createTable('Users', {
+    const tags = queryInterface.createTable('tags', {
       id: {
         type: Sequelize.INTEGER, 
         autoIncrement: true,
@@ -12,26 +12,16 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      password: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       createdAt: {
         type: Sequelize.DATE,
         defaultValue: Date.now,
       },
     });
 
-    
-
-    return Users;
+    return tags;
   },
 
   down: async (queryInterface, Sequelize) => {
-    queryInterface.dropTable('Users')
+    queryInterface.dropTable('tags')
   }
 };
