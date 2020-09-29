@@ -31,6 +31,6 @@ Images.belongsTo(Products, {
 });
 
 
-console.log(Images === db.sequelize.models.Images);
+//console.log(Images === db.sequelize.models.Images);
 
 export default Images;

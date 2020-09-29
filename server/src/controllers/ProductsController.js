@@ -15,7 +15,7 @@ class ProductController {
       }); 
    }
 
-   // Mostra um único produto
+   // Retorna produto conforme id mandado nas params
    async show(req, res){
       await Products.findOne({ 
          where: { 'id': req.params.id } 
@@ -26,17 +26,18 @@ class ProductController {
             return res.status(400).send('Produto não encontrado');
          }
       }).catch(err => {
-         return res.status(500).send(err);
+         console.log(err);
+         return res.status(500);
       })
    }
 
-   // Guarda produto no banco de dados
+   // Cria produto no banco de dados
    async store(req, res){
       await Products.create(req.body).then(()=>{
          return res.status(201).send('Produto criado com sucesso');
-      }).catch((error) =>{
-         console.log(error);
-         return res.status(500).send(error);
+      }).catch((err) =>{
+         console.log(err);
+         return res.status(500);
       })
    }
 
@@ -50,7 +51,8 @@ class ProductController {
          }).then(() => {
             return res.status(200).send('Editado com sucesso!');
          }).catch((err) => {
-            return res.status(500).send(err);
+            console.log(err);
+            return res.status(500);
          })
       }).catch(() => {
          return res.status(400).send('Produto não encontrado.');
@@ -67,7 +69,8 @@ class ProductController {
          }).then(() => {
             return res.status(200).send('Excluido com sucesso! ');
          }).catch(err => {
-            return res.status(500).send(err);
+            console.log(err);
+            return res.status(500);
          })
       }).catch(() => { 
          return res.status(400).send('Produto não encontrado.');

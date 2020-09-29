@@ -35,6 +35,6 @@ Product.belongsTo(Tags, {
     foreignKeyConstraint: true
 });
 
-console.log(Product_tag === db.sequelize.models.Product_tag);
+//console.log(Product_tag === db.sequelize.models.Product_tag);
 
 export default Product_tag;

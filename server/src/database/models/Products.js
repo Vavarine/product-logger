@@ -47,6 +47,6 @@ Products.belongsTo(Users, {
 
 sequelizePaginate.paginate(Products);
 
-console.log(Products === db.sequelize.models.Products);
+//console.log(Products === db.sequelize.models.Products);
 
 export default Products;

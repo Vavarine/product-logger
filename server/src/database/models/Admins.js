@@ -12,7 +12,7 @@ const Admins = db.sequelize.define('Admins', {
             autoIncrement: true,
             primaryKey: true
         },
-        permission: {
+        permissions: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -31,6 +31,6 @@ Admins.belongsTo(Users, {
     foreignKeyConstraint: true
 });
 
-console.log(Admins === db.sequelize.models.Admins);
+//console.log(Admins === db.sequelize.models.Admins);
 
 export default Admins;

@@ -24,6 +24,6 @@ const Tags = db.sequelize.define('Tags', {
     }
 )
 
-console.log(Tags === db.sequelize.models.Tags);
+//console.log(Tags === db.sequelize.models.Tags);
 
 export default Tags;

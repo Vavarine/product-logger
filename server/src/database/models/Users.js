@@ -33,6 +33,6 @@ const Users = db.sequelize.define('Users', {
 )
 
 
-console.log(Users === db.sequelize.models.Users);
+//console.log(Users === db.sequelize.models.Users);
 
 export default Users;
