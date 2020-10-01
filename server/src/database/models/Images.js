@@ -11,8 +11,8 @@ const Images = db.sequelize.define('Images', {
             autoIncrement: true,
             primaryKey: true
         },
-        data: {
-            type: Sequelize.BLOB,
+        url: {
+            type: Sequelize.STRING,
             allowNull: false
         },
         createdAt: {

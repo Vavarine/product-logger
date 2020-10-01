@@ -15,7 +15,7 @@ class AdmisnController {
       }).catch(err => {
          console.log(err);
          return res.status(500);
-      })
+      });
    }
 
    // Retorna admin conforme id mandado nas params
@@ -31,7 +31,7 @@ class AdmisnController {
       }).catch(err => {
          console.log(err);
          return res.status(500);
-      })
+      });
    }
 
    // Cria um admin com informações contidas contidas body
@@ -41,7 +41,7 @@ class AdmisnController {
       }).catch(err => {
          console.log(err);
          return res.status(500)
-      })
+      });
    }
 
    // Permite edição de Admins
@@ -62,7 +62,7 @@ class AdmisnController {
          })
       }).catch(() => {
          return res.status(400).send('Admin não encontrado.');
-      })
+      });
    }
 
    // Permite exclusão de admins
@@ -85,7 +85,7 @@ class AdmisnController {
       }).catch(err => {
          console.log(err);
          return res.status(500);
-      })
+      });
    }
    
 }

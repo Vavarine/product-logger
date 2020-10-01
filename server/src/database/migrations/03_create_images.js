@@ -13,8 +13,8 @@ module.exports = {
         allowNull: false,
         references: { model: 'Users', key: 'id' },
       },
-      data: {
-        type: Sequelize.BLOB,
+      url: {
+        type: Sequelize.STRING,
         allowNull: false
       },
       createdAt: {
