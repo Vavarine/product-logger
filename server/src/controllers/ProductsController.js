@@ -11,7 +11,7 @@ class ProductController {
 
       await Products.paginate({ page, paginate: 10 }).then(products => {
          const data = Object.assign(products, {page: parseInt(page)});
-         return res.send(data);
+         return res.send(data).send(err);
       }); 
    }
 
@@ -27,7 +27,7 @@ class ProductController {
          }
       }).catch(err => {
          console.log(err);
-         return res.status(500);
+         return res.status(500).send(err);
       })
    }
 
@@ -37,7 +37,7 @@ class ProductController {
          return res.status(201).send('Produto criado com sucesso');
       }).catch((err) =>{
          console.log(err);
-         return res.status(500);
+         return res.status(500).send(err);
       })
    }
 
@@ -52,7 +52,7 @@ class ProductController {
             return res.status(200).send('Editado com sucesso!');
          }).catch((err) => {
             console.log(err);
-            return res.status(500);
+            return res.status(500).send(err);
          })
       }).catch(() => {
          return res.status(400).send('Produto não encontrado.');
@@ -70,7 +70,7 @@ class ProductController {
             return res.status(200).send('Excluido com sucesso! ');
          }).catch(err => {
             console.log(err);
-            return res.status(500);
+            return res.status(500).send(err);
          })
       }).catch(() => { 
          return res.status(400).send('Produto não encontrado.');

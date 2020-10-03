@@ -11,7 +11,7 @@ const Images = db.sequelize.define('Images', {
             autoIncrement: true,
             primaryKey: true
         },
-        url: {
+        fileName: {
             type: Sequelize.STRING,
             allowNull: false
         },
@@ -26,7 +26,8 @@ const Images = db.sequelize.define('Images', {
 )
 
 Images.belongsTo(Products, {
-    foreignKey: 'producId',
+    foreignKey: 'productId',
+    keyType: DataTypes.INTEGER,
     foreignKeyConstraint: true
 });
 

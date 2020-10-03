@@ -1,13 +1,20 @@
 import express from 'express';
+import multer from 'multer';
+
 import ProductsController from './controllers/ProductsController';
 import UsersController from './controllers/UsersController';
 import AdminsController from './controllers/AdminsController';
+import ImagesController from './controllers/ImagesController';
+
+import multerConfig from './config/multer';
 
 const routes = express.Router();
+const upload = multer(multerConfig);
 
 const productsController = new ProductsController();
 const usersController = new UsersController();
 const adminsController = new AdminsController();
+const imagesController = new ImagesController();
 
 // Rotas de produtos
 routes.get('/products', productsController.index);
@@ -28,6 +35,9 @@ routes.get('/admins', adminsController.index);
 routes.post('/admins', adminsController.store);
 routes.get('/admins/:id', adminsController.show);
 routes.put('/admins/:id', adminsController.update);
+
+// Rotas de Images
+routes.post('/images', upload.single('image'), imagesController.store);
 
 routes.get('/', (req, res) => {
    return res.send('Minha nossa');

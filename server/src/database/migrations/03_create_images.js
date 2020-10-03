@@ -11,9 +11,9 @@ module.exports = {
       productId: {
         type: Sequelize.INTEGER, 
         allowNull: false,
-        references: { model: 'Users', key: 'id' },
+        references: { model: 'Products', key: 'id' },
       },
-      url: {
+      fileName: {
         type: Sequelize.STRING,
         allowNull: false
       },
